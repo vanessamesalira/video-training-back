@@ -18,6 +18,7 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '17'
+        server-id: github # necessário para evitar um problema conhecido
 
     - name: Build with Gradle
       run: |

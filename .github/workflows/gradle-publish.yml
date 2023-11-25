@@ -1,0 +1,24 @@
+name: Run Backend Tests
+
+on:
+  push:
+    branches:
+      - 'main'
+      - '*/Release*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2
+
+      - name: Configurar JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Executar Testes com Gradle
+        run: |
+          ./gradlew test  # Comando para executar os testes com Gradle
